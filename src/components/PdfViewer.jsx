@@ -17,7 +17,7 @@ const PdfViewer = () => {
       {file && (
         <div style={{ width: '100%', maxWidth: '800px', margin: 'auto', marginTop: '100px' }}>
           <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-            <Viewer fileUrl={file} scrollMode="horizontal" twoPages={true} />
+            <Viewer fileUrl={file} scrollMode="horizontal" />
           </Worker>
         </div>
       )}
