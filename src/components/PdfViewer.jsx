@@ -15,11 +15,9 @@ const PdfViewer = () => {
     <div>
       <input type="file" accept=".pdf" onChange={onFileChange} />
       {file && (
-        <div style={{ width: '100%', maxWidth: '800px', margin: 'auto',marginTop:"100px" }}>
+        <div style={{ width: '100%', maxWidth: '800px', margin: 'auto', marginTop: '100px' }}>
           <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-            <div style={{ overflow: 'auto' }}>
-              <Viewer fileUrl={file} />
-            </div>
+            <Viewer fileUrl={file} scrollMode="horizontal" twoPages={true} />
           </Worker>
         </div>
       )}
